@@ -27,4 +27,8 @@ Other notes:
 - have array of ?s (array of objects)
 */
 
-var 
+var questionArr = [
+  { id: 1, question: "Are the Chicago Bears the best football team ever?"},
+  { id: 2, question: "Are the Green Bay Packers the worst football team ever?"}
+]
+
