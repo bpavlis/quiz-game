@@ -27,8 +27,85 @@ Other notes:
 - have array of ?s (array of objects)
 */
 
+
+
+var timer;
+var points = 0;
+var startBtn = document.querySelector(".start-button");
+var currentQuestion = "";
+
 var questionArr = [
   { id: 1, question: "Are the Chicago Bears the best football team ever?"},
   { id: 2, question: "Are the Green Bay Packers the worst football team ever?"}
 ]
 
+
+//start
+startBtn.addEventListener("click", start);
+function start(){
+  timer = 20;
+  setTime();
+}
+
+
+//timer
+function setTime() {
+  // Sets interval in variable
+  var timerInterval = setInterval(function () {
+    timer--;
+    // display time to screen
+    var timerCount = document.querySelector(".timer-count");
+    timerCount.textContent = timer;
+    if (timer === 0) {
+      // Stops execution of action at set interval
+      clearInterval(timerInterval);
+      lose();
+    }
+    if (checkIfWin()) {
+      win();
+      clearInterval(timerInterval);
+    }
+  }, 1000);
+}
+
+
+//generating a random number
+function genRandNum(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+
+//setting a random question from the array
+function setQuestion() {
+  currentQuestion = wordArr[genRandNum(0, questionArr.length - 1)];
+}
+
+function displayQuestion() {
+  var word = "";
+  for (var i = 0; i < objectArray.length; i++) {
+    word += objectArray[i].letter;
+  }
+  wordBlanks.textContent = word;
+}
+
+
+
+function win() {
+  wordBlanks.textContent = "YOU WIN!";
+  wins++;
+  endGame();
+}
+
+
+function lose() {
+  wordBlanks.textContent = "Time is up. YOU LOSE!";
+  losses++;
+  endGame();
+}
+
+
+function win() {
+  wordBlanks.textContent = "YOU WIN!";
+  wins++;
+  endGame();
+}
