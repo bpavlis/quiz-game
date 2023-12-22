@@ -1,157 +1,16 @@
-/* * {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  justify-content: flex-start;
-  background: linear-gradient(0deg, rgb(11, 22, 42) 0%, rgb(200, 56, 3) 63%);
-}
-
-.reset-button {
-  font-size: 16px;
-  height: 30px;
-  line-height: 8px;
-  margin-top: 20px;
-}
-
-.win-loss-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 16px;
-}
-
-button {
-  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgba(200, 56, 3) 100%);
-  border-radius: 8px;
-  color: #0B162A;
-  cursor: pointer;
-  font-size: 2em;
-  letter-spacing: 0.21px;
-  line-height: 16px;
-  max-width: 255px;
-  padding: 20px 52px;
-  text-align: center;
-  transition-duration: 0.15s;
-  transition-property: background-color;
-  transition-timing-function: linear;
-  margin-top: 0.6em;
-}
-
-header {
-  padding: 40px;
-  text-align: center;
-  background: #0B162A;
-  color: #fff;
-  border-bottom:30px #0B162A;
-}
-
-main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-section {
-  flex: 0 auto;
-  padding: 8px;
-  margin-top: 50px;
-  background-color: white;
-  border-radius: 8px;
-}
-
-.word-guess {
-  width: 55vw;
-  height: 400px;
-}
-
-.results {
-  width: 30vw;
-  height: 400px;
-}
-
-.card {
-  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgba(200, 56, 3) 100%);
-  border: 1px solid #eceff1;
-  border-radius: 8px;
-  box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
-  #0B162A 0 2px 4px 3px;
-  margin: auto;
-  padding: 20px;
-}
-
-.word-blanks {
-  line-height: 360px;
-}
-
-.large-font {
-  font-size: 3.5em;
-  text-align:center;
-}
-
-.timer {
-  height: 240px;
-  padding: 10px;
-  background: #0B162A;
-  color: #fff;
-  text-align: center;
-}
-
-.timer-text {
-  padding: 55px;
-}
-
-@media screen and (max-width: 1183px) {
-  main {
-    flex-direction: column;
-  }
-
-  .word-guess,
-  .results {
-    width: 90vw;
-  }
-
-  section {
-    background-color: white;
-    margin: 20px auto;
-    width: 92vw;
-  }
-}
-
-@media screen and (max-width: 504px) {
-  .large-font {
-    font-size: 2em;
-  }
-
-  .reset-button {
-    font-size: 12px;
-    width: 20ox;
-    
-  }
-
-  .timer {
-    height: 200px;
-  }
- 
-} */
-
-/* Normalize styling */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #C83803;
 }
 
 :root {
-  --primary-color: #cc6600;
-  --secondary-color: #ff9900;
+  --primary-color: #0B162A;
+  --secondary-color: #C83803;
   --tertiary-color: #aaaaaa;
   --white-color: #ffffff;
-  --correct-color: #6b8e23;
+  --correct-color: #82ac2d;
 }
 
 body {
@@ -169,7 +28,6 @@ a {
   text-align: center;
 }
 
-/* Header */
 header {
   display: flex;
   flex-wrap: wrap;
@@ -183,15 +41,14 @@ header {
 }
 
 .scores a {
-  color: var(--secondary-color);
+  color: var(--primary-color);
   cursor: pointer;
 }
 
 .scores a:hover {
-  color: var(--tertiary-color);
+  color: var(--white-color);
 }
 
-/* Start Quiz */
 .start-quiz {
   text-align: center;
 }
@@ -201,14 +58,13 @@ h1 {
 }
 
 h2 {
-  color: var(--tertiary-color);
+  color: var(--white-color);
   border-top: 1px solid var(--tertiary-color);
   margin: 20px 0;
   font-style: italic;
   text-align: center;
 }
 
-/* Buttons */
 .btn-grid {
   display: grid;
   grid-template-columns: repeat(2, auto);
@@ -231,7 +87,8 @@ button {
 }
 
 button:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--white-color);
+  color: var(--primary-color)
 }
 
 .hide {
@@ -246,7 +103,6 @@ button:hover {
   background-color: var(--tertiary-color);
 }
 
-/* Wrapper for buttons */
 .controls {
   display: flex;
   justify-content: center;
@@ -254,16 +110,16 @@ button:hover {
   margin: 10px 0;
 }
 
-/* Enter your initial */
 input[type="text"] {
   padding: 10px;
   margin: 8px 0;
-  border: 1px solid var(--tertiary-color);
+  border: 1px solid var(--white-color);
   border-radius: 4px;
   box-sizing: border-box;
+  background-color: var(--primary-color);
+  color: var(--white-color);
 }
 
-/* Highscores Page */
 .highscore {
   display: flex;
   flex-wrap: wrap;
@@ -274,11 +130,11 @@ input[type="text"] {
 .score-div {
   flex: 1 35%;
   padding: 10px 0;
-  border: 1px solid var(--correct-color);
+  border: 1px solid var(--white-color);
+  border-radius: 5px;
+  margin: 10px;
 }
 
-/*** MEDIA QUERY FOR MOBILE PHONES AND SMALLER ***/
-/* this will be applied on any screen smaller than 575px */
 @media screen and (max-width: 575px) {
   .btn-grid {
     grid-template-columns: repeat(1, auto);
