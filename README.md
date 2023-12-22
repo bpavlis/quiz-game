@@ -4,7 +4,7 @@
 Created a quiz app mainly using JS, HTML, and CSS.
 
 ## Final Screenshot
-![final screenshot](./Assets/unit12finalscreenshot.png)
+![final screenshot](./Assets/images/unit04finalscreenshot.png)
 
 ## Links
 [GitHub](https://github.com/bpavlis/quiz-game)
